@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ALIF Online Tuition</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+
+    :root{
+      --primary:#0f172a;
+      --secondary:#1e293b;
+      --accent:#c9a227;
+      --light:#f8fafc;
+      --white:#ffffff;
+      --text:#475569;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--white);
+      color:var(--text);
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    .mal-font{
+      font-family:'Noto Sans Malayalam',sans-serif;
+      line-height:2;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    section{
+      padding:90px 20px;
+    }
+
+    .container{
+      max-width:1300px;
+      margin:auto;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
+
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(15px);
+
+      border-bottom:1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-container{
+      max-width:1300px;
+      margin:auto;
+
+      padding:14px 20px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+    }
+
+    .logo img{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid var(--accent);
+    }
+
+    .logo-text h1{
+      color:var(--primary);
+      font-size:30px;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .logo-text span{
+      font-size:12px;
+      letter-spacing:3px;
+      color:var(--accent);
+      font-weight:600;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:35px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:var(--secondary);
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:var(--accent);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:100vh;
+
+      background:
+      linear-gradient(
+      90deg,
+      rgba(2,6,23,0.95),
+      rgba(15,23,42,0.88),
+      rgba(15,23,42,0.76)),
+
+      url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2000&auto=format&fit=crop')
+      center/cover no-repeat;
+
+      display:flex;
+      align-items:center;
+
+      padding-top:120px;
+    }
+
+    .hero-container{
+      max-width:1300px;
+      margin:auto;
+
+      padding:0 20px;
+
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      background:rgba(255,255,255,0.10);
+
+      border:1px solid rgba(255,255,255,0.15);
+
+      color:white;
+
+      padding:12px 24px;
+
+      border-radius:50px;
+
+      margin-bottom:25px;
+
+      font-size:14px;
+      font-weight:500;
+    }
+
+    .hero-text h1{
+      font-size:68px;
+      line-height:1.08;
+      color:white;
+      font-weight:800;
+      margin-bottom:24px;
+    }
+
+    .hero-text h1 span{
+      color:var(--accent);
+    }
+
+    .hero-text p{
+      color:#e2e8f0;
+      font-size:20px;
+      max-width:650px;
+      margin-bottom:35px;
+    }
+
+    .hero-features{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:40px;
+    }
+
+    .hero-feature{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+
+      color:white;
+
+      padding:12px 18px;
+
+      border-radius:50px;
+
+      font-size:14px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .hero-feature i{
+      color:var(--accent);
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 32px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:linear-gradient(to right,#d4af37,#b8860b);
+      color:white;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-5px);
+      box-shadow:0 18px 35px rgba(212,175,55,0.35);
+    }
+
+    .btn-outline{
+      border:2px solid rgba(255,255,255,0.2);
+      color:white;
+    }
+
+    .btn-outline:hover{
+      background:white;
+      color:var(--primary);
+    }
+
+    /* HERO IMAGE */
+
+    .hero-image{
+      position:relative;
+    }
+
+    .hero-image img{
+      border-radius:30px;
+      height:600px;
+      object-fit:cover;
+
+      border:4px solid rgba(255,255,255,0.10);
+
+      box-shadow:0 30px 60px rgba(0,0,0,0.35);
+    }
+
+    .floating-card{
+      position:absolute;
+
+      background:white;
+
+      padding:15px 22px;
+
+      border-radius:18px;
+
+      font-weight:600;
+
+      color:var(--primary);
+
+      box-shadow:0 10px 25px rgba(0,0,0,0.18);
+    }
+
+    .card1{
+      top:30px;
+      left:-25px;
+    }
+
+    .card2{
+      bottom:40px;
+      left:-20px;
+    }
+
+    .card3{
+      top:50%;
+      right:-20px;
+    }
+
+    /* ================= SECTION TITLE ================= */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:46px;
+      color:var(--primary);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#64748b;
+      font-size:18px;
+    }
+
+    .line{
+      width:80px;
+      height:4px;
+      background:var(--accent);
+      border-radius:50px;
+      margin:18px auto 0;
+    }
+
+    /* ================= CARDS ================= */
+
+    .bg-light{
+      background:var(--light);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      padding:40px 28px;
+
+      border-radius:25px;
+
+      text-align:center;
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card i{
+      font-size:52px;
+      color:var(--accent);
+      margin-bottom:20px;
+    }
+
+    .card h3{
+      color:var(--primary);
+      margin-bottom:14px;
+      font-size:26px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-text{
+      max-width:950px;
+      margin:auto;
+
+      text-align:center;
+
+      font-size:20px;
+      line-height:2;
+    }
+
+    /* ================= SUBJECTS ================= */
+
+    .subjects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:22px;
+    }
+
+    .subject-box{
+      background:white;
+      padding:35px 22px;
+
+      border-radius:22px;
+
+      text-align:center;
+
+      box-shadow:0 10px 25px rgba(0,0,0,0.06);
+
+      transition:0.3s;
+    }
+
+    .subject-box:hover{
+      transform:translateY(-8px);
+    }
+
+    .subject-box i{
+      font-size:42px;
+      color:var(--accent);
+      margin-bottom:18px;
+    }
+
+    .subject-box h4{
+      color:var(--primary);
+      font-size:19px;
+    }
+
+    /* ================= SUBJECTS GRID ================= */
+
+.subjects-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:30px;
+  margin-top:40px;
+}
+
+.subject-box{
+  background:white;
+  padding:40px 25px;
+  border-radius:24px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  transition:0.3s;
+  min-height:220px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.subject-box:hover{
+  transform:translateY(-8px);
+}
+
+.subject-box i{
+  font-size:52px;
+  color:var(--accent);
+  margin-bottom:22px;
+}
+
+.subject-box h4{
+  font-size:28px;
+  line-height:1.5;
+  color:var(--primary);
+  font-weight:700;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+  .subjects-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .subjects-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+    /* ================= CTA ================= */
+
+    .cta{
+      background:
+      linear-gradient(rgba(2,6,23,0.88),
+      rgba(2,6,23,0.88)),
+
+      url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2000&auto=format&fit=crop')
+      center/cover no-repeat;
+
+      text-align:center;
+      color:white;
+    }
+
+    .cta h2{
+      font-size:52px;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      font-size:22px;
+      max-width:750px;
+      margin:auto;
+    }
+
+    .cta .btn{
+      margin-top:35px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .contact-card{
+      background:white;
+      padding:40px 30px;
+
+      border-radius:24px;
+
+      text-align:center;
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .contact-card i{
+      font-size:50px;
+      color:var(--accent);
+      margin-bottom:16px;
+    }
+
+    .contact-card h3{
+      font-size:28px;
+      color:var(--primary);
+      margin-bottom:12px;
+    }
+
+    .whatsapp-btn{
+      display:inline-block;
+
+      margin-top:18px;
+
+      background:#25D366;
+
+      color:white;
+
+      text-decoration:none;
+
+      padding:13px 28px;
+
+      border-radius:50px;
+
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .whatsapp-btn:hover{
+      transform:translateY(-4px);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#020617;
+      color:white;
+
+      padding:80px 20px 30px;
+    }
+
+    .footer-container{
+      max-width:1300px;
+      margin:auto;
+
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:40px;
+    }
+
+    .footer-logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:20px;
+    }
+
+    .footer-logo img{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      border:2px solid var(--accent);
+    }
+
+    .footer-links a{
+      display:block;
+      color:#cbd5e1;
+      margin-bottom:12px;
+      text-decoration:none;
+    }
+
+    .footer-contact p{
+      margin-bottom:12px;
+      color:#cbd5e1;
+    }
+
+    .footer-bottom{
+      text-align:center;
+
+      margin-top:60px;
+
+      border-top:1px solid rgba(255,255,255,0.08);
+
+      padding-top:20px;
+
+      color:#94a3b8;
+    }
+
+    /* ================= LANGUAGE BUTTON ================= */
+
+    .language-switch{
+      position:fixed;
+      bottom:22px;
+      right:22px;
+      z-index:999;
+    }
+
+    .language-switch button{
+      background:linear-gradient(to right,#d4af37,#a67c1c);
+
+      color:white;
+
+      border:none;
+
+      padding:14px 24px;
+
+      border-radius:50px;
+
+      cursor:pointer;
+
+      font-weight:600;
+
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:992px){
+
+      .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero-text p{
+        margin:auto auto 35px;
+      }
+
+      .hero-features,
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-text h1{
+        font-size:48px;
+      }
+
+      .hero-image img{
+        height:420px;
+      }
+
+      .floating-card{
+        display:none;
+      }
+
+      .footer-container{
+        grid-template-columns:1fr;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+
+        <img src="images/alifLogo.jpeg" alt="ALIF Logo">
+
+        <div class="logo-text">
+          <h1>ALIF</h1>
+          <span>ONLINE TUITION</span>
+        </div>
+
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#home" id="navHome">Home</a>
+        <a href="#about" id="navAbout">About</a>
+        <a href="#services" id="navServices">Services</a>
+        <a href="#subjects" id="navSubjects">Subjects</a>
+        <a href="#contact" id="navContact">Contact</a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-container">
+
+      <!-- LEFT -->
+
+      <div class="hero-text">
+
+        <div class="hero-badge" id="heroSmall">
+          🌙 Trusted Online School & Madrasa Education
+        </div>
+
+        <h1 id="heroTitle">
+          Start School & Madrasa <br>
+          Learning From Home <br>
+          With <span>ALIF</span>
+        </h1>
+
+        <p id="heroText">
+          📚 Interactive online classes for school and madrasa students under experienced teachers and Hafiz scholars.
+          <br><br>
+          🏡 Begin your child’s learning journey from home through flexible individual and group classes.
+        </p>
+
+        <div class="hero-features">
+
+          <div class="hero-feature">
+            <i class="fa-solid fa-user-graduate"></i>
+            <span id="featureA">Expert Teachers</span>
+          </div>
+
+          <div class="hero-feature">
+            <i class="fa-solid fa-book-quran"></i>
+            <span id="featureB">Islamic Studies</span>
+          </div>
+
+          <div class="hero-feature">
+            <i class="fa-solid fa-laptop"></i>
+            <span id="featureC">Online Classes</span>
+          </div>
+
+        </div>
+
+        <div class="hero-buttons">
+
+          <a href="#contact" class="btn btn-primary" id="registerBtn">
+            Register Now
+          </a>
+
+          <a href="#about" class="btn btn-outline" id="learnBtn">
+            Learn More
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="hero-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1400&auto=format&fit=crop"
+          alt="Students Learning">
+
+        <div class="floating-card card1">
+          📖 Madrasa Classes
+        </div>
+
+        <div class="floating-card card2">
+          🎓 School Subjects
+        </div>
+
+        <div class="floating-card card3">
+          ⭐ Individual Classes
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="bg-light">
+
+    <div class="container">
+
+      <div class="cards">
+
+        <div class="card">
+
+          <i class="fa-solid fa-user-group"></i>
+
+          <h3 id="feature1Title">
+            Friendly & Trusted Teachers
+          </h3>
+
+          <p id="feature1Text">
+            Experienced and caring teachers dedicated to helping every student learn confidently.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <i class="fa-solid fa-book-quran"></i>
+
+          <h3 id="feature2Title">
+            Islamic Studies
+          </h3>
+
+          <p id="feature2Text">
+            Quran, Tajweed, Hifz and Islamic studies with experienced teachers.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <i class="fa-solid fa-house"></i>
+
+          <h3 id="feature3Title">
+            Learn From Home
+          </h3>
+
+          <p id="feature3Text">
+            Flexible online learning from anywhere in the world.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2 id="aboutTitle">About ALIF</h2>
+
+        <p id="aboutSub">
+          Building strong academic and Islamic foundations
+        </p>
+
+        <div class="line"></div>
+
+      </div>
+
+      <div class="about-text" id="aboutText">
+
+        ALIF Online Tuition provides quality school and madrasa education through interactive online classes guided by experienced teachers and Hafiz scholars. We help students grow academically and spiritually from the comfort of home.
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="bg-light" id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2 id="servicesTitle">Our Services</h2>
+
+        <p id="servicesSub">
+          Personalized online learning for every student
+        </p>
+
+        <div class="line"></div>
+
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <i class="fa-solid fa-user"></i>
+
+          <h3 id="individualTitle">Individual Classes</h3>
+
+          <p id="individualText">
+            Personalized one-to-one learning with flexible timing and full teacher attention.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <i class="fa-solid fa-users"></i>
+
+          <h3 id="groupTitle">Group Classes</h3>
+
+          <p id="groupText">
+            Interactive and affordable group learning sessions in a friendly environment.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SUBJECTS -->
+
+  <section id="subjects">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2 id="subjectsTitle">
+          Subjects We Teach
+        </h2>
+
+        <p id="subjectsSub">
+          Academic and Islamic studies under experienced teachers
+        </p>
+
+        <div class="line"></div>
+
+      </div>
+
+      <div class="subjects-grid">
+
+        <div class="subject-box">
+          <i class="fa-solid fa-book"></i>
+          <h4 id="sub1">Madrasa Subjects</h4>
+        </div>
+
+        <div class="subject-box">
+          <i class="fa-solid fa-school"></i>
+          <h4 id="sub2">School Subjects</h4>
+        </div>
+
+        <div class="subject-box">
+          <i class="fa-solid fa-book-quran"></i>
+          <h4 id="sub3">Quran Recitation</h4>
+        </div>
+
+        <div class="subject-box">
+          <i class="fa-solid fa-mosque"></i>
+          <h4 id="sub4">Prayer Practice Training</h4>
+        </div>
+
+        <div class="subject-box">
+          <i class="fa-solid fa-language"></i>
+          <h4 id="sub5">Arabic, Malayalam & English Alphabet</h4>
+        </div>
+
+        <div class="subject-box">
+          <i class="fa-solid fa-star-and-crescent"></i>
+          <h4 id="sub6">Hifz</h4>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2 id="ctaTitle">
+        Limited Seats Available
+      </h2>
+
+      <p id="ctaText">
+        📌 Give your child a strong educational foundation 🌙
+      </p>
+
+      <a href="#contact" class="btn btn-primary" id="joinBtn">
+        Join Today
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2 id="contactTitle">Contact Us</h2>
+
+        <p id="contactSub">
+          Get in touch for admissions and enquiries
+        </p>
+
+        <div class="line"></div>
+
+      </div>
+
+      <div class="contact-wrapper">
+
+        <div class="contact-card">
+
+          <i class="fa-solid fa-phone"></i>
+
+          <h3 id="phoneTitle">Phone</h3>
+
+          <p>+91 9207417901</p>
+          <p>+91 86061 22570</p>
+
+        </div>
+
+        <div class="contact-card">
+
+          <i class="fa-brands fa-whatsapp"></i>
+
+          <h3 id="whatsappTitle">WhatsApp</h3>
+
+          <p id="whatsappText">
+            Chat with us directly on WhatsApp
+          </p>
+
+          <a href="https://wa.me/919207417901?text=Hello%2C%20I%20need%20details%20about%20ALIF%20Online%20Tuition"
+            target="_blank"
+            class="whatsapp-btn"
+            id="whatsappBtn">
+
+            Message Now
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div>
+
+        <div class="footer-logo">
+
+          <img src="images/alifLogo.jpeg" alt="ALIF">
+
+          <h2>ALIF</h2>
+
+        </div>
+
+        <p id="footerAbout">
+          Professional online education combining modern learning with strong Islamic values.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3 id="quickLinks">Quick Links</h3>
+
+        <a href="#home" id="fHome">Home</a>
+        <a href="#about" id="fAbout">About</a>
+        <a href="#services" id="fServices">Services</a>
+        <a href="#subjects" id="fSubjects">Subjects</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h3 id="footerContact">Contact</h3>
+
+        <p>📞 +91 9207417901</p>
+        <p>📞 +91 86061 22570</p>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 ALIF Online Tuition. All Rights Reserved.
+    </div>
+
+  </footer>
+
+  <!-- LANGUAGE BUTTON -->
+
+  <div class="language-switch">
+
+    <button onclick="toggleLanguage()" id="langBtn">
+      മലയാളം
+    </button>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    let currentLanguage = "english";
+
+    function toggleLanguage(){
+
+      const button = document.getElementById("langBtn");
+
+      if(currentLanguage === "english"){
+
+        document.body.classList.add("mal-font");
+
+        currentLanguage = "malayalam";
+
+        button.innerHTML = "English";
+
+        navHome.innerHTML = "ഹോം";
+        navAbout.innerHTML = "ഞങ്ങളേക്കുറിച്ച്";
+        navServices.innerHTML = "സേവനങ്ങൾ";
+        navSubjects.innerHTML = "വിഷയങ്ങൾ";
+        navContact.innerHTML = "ബന്ധപ്പെടുക";
+
+        heroSmall.innerHTML =
+        "🌙 വിശ്വസനീയമായ ഓൺലൈൻ സ്കൂൾ & മദ്രസ പഠനം";
+
+        heroTitle.innerHTML =
+        "ALIF നോടൊപ്പം <br> വീട്ടിൽ നിന്ന് തന്നെ <br> സ്കൂൾ & മദ്രസ പഠനം ആരംഭിക്കൂ";
+
+        heroText.innerHTML =
+        "📚 പരിചയസമ്പന്നരായ അധ്യാപകരുടെയും ഹാഫിളീങ്ങളുടെയും കീഴിൽ സ്കൂൾ, മദ്രസ വിദ്യാർത്ഥികൾക്കായി ഓൺലൈൻ ക്ലാസുകൾ.<br><br>🏡 വ്യക്തിഗതവും ഗ്രൂപ്പ് ക്ലാസുകളുമായി വീട്ടിൽ നിന്ന് തന്നെ പഠിക്കാം.";
+
+        registerBtn.innerHTML = "ഇപ്പോൾ രജിസ്റ്റർ ചെയ്യൂ";
+        learnBtn.innerHTML = "കൂടുതൽ അറിയൂ";
+
+        featureA.innerHTML = "പരിചയസമ്പന്നരായ അധ്യാപകർ";
+        featureB.innerHTML = "ഇസ്ലാമിക പഠനം";
+        featureC.innerHTML = "ഓൺലൈൻ ക്ലാസുകൾ";
+
+        feature1Title.innerHTML = "സൗഹൃദപരവും വിശ്വസനീയരുമായ അധ്യാപകർ";
+        feature1Text.innerHTML =
+        "ഓരോ വിദ്യാർത്ഥിക്കും ആത്മവിശ്വാസത്തോടെ പഠിക്കാൻ സഹായിക്കുന്ന പരിചയസമ്പന്നരായ അധ്യാപകർ.";
+
+        feature2Title.innerHTML = "ഇസ്ലാമിക പഠനം";
+        feature2Text.innerHTML =
+        "ഖുർആൻ, തജ്‍വീദ്, ഹിഫ്‌സ് എന്നിവ പരിചയസമ്പന്നരായ അധ്യാപകരോടൊപ്പം.";
+
+        feature3Title.innerHTML = "വീട്ടിൽ നിന്നും പഠിക്കാം";
+        feature3Text.innerHTML =
+        "ലോകത്തിന്റെ ഏത് ഭാഗത്തുനിന്നും ഓൺലൈൻ പഠനം.";
+
+        aboutTitle.innerHTML = "ALIF നെക്കുറിച്ച്";
+        aboutSub.innerHTML =
+        "വിദ്യാഭ്യാസത്തിലും ഇസ്ലാമിക മൂല്യങ്ങളിലും ഉറച്ച അടിത്തറ";
+
+        aboutText.innerHTML =
+        "അനുഭവസമ്പന്നരായ അധ്യാപകരുടെയും ഹാഫിളീങ്ങളുടെയും നേതൃത്വത്തിൽ സ്കൂൾ, മദ്രസ പഠനം ഓൺലൈൻ വഴി ഗുണമേന്മയോടെ നൽകുന്നു.";
+
+        servicesTitle.innerHTML = "ഞങ്ങളുടെ സേവനങ്ങൾ";
+        servicesSub.innerHTML =
+        "ഓരോ വിദ്യാർത്ഥിക്കും അനുയോജ്യമായ പഠനരീതി";
+
+        individualTitle.innerHTML = "വ്യക്തിഗത ക്ലാസുകൾ";
+        individualText.innerHTML =
+        "ഒരാൾക്ക് ഒരാൾ എന്ന രീതിയിലുള്ള വ്യക്തിഗത പഠനം.";
+
+        groupTitle.innerHTML = "ഗ്രൂപ്പ് ക്ലാസുകൾ";
+        groupText.innerHTML =
+        "സൗഹൃദപരമായ ഗ്രൂപ്പ് പഠനാന്തരീക്ഷം.";
+
+        subjectsTitle.innerHTML = "ഞങ്ങൾ പഠിപ്പിക്കുന്ന വിഷയങ്ങൾ";
+        subjectsSub.innerHTML =
+        "അനുഭവസമ്പന്നരായ അധ്യാപകരോടൊപ്പം വിദ്യാഭ്യാസവും ഇസ്ലാമിക പഠനവും";
+
+        sub1.innerHTML = "മദ്റസ വിഷയങ്ങൾ";
+        sub2.innerHTML = "സ്കൂൾ വിഷയങ്ങൾ";
+        sub3.innerHTML = "ഖുർആൻ പാരായണം"; 
+        sub4.innerHTML = "നിസ്കാര പഠനവും പരിശീലനവും";
+        sub5.innerHTML = "അറബി, മലയാളം & ഇംഗ്ലീഷ് അക്ഷരമാല";
+        sub6.innerHTML = "ഹിഫ്‌സ്";
+
+        ctaTitle.innerHTML =
+        "പരിമിതമായ സീറ്റുകൾ മാത്രം";
+
+        ctaText.innerHTML =
+        "📌 നിങ്ങളുടെ കുട്ടിക്ക് വിദ്യാഭ്യാസത്തിൽ ഉറച്ച അടിത്തറ നല്കൂ 🌙";
+
+        joinBtn.innerHTML = "ഇന്ന് തന്നെ ചേരൂ";
+
+        contactTitle.innerHTML = "ബന്ധപ്പെടുക";
+        contactSub.innerHTML =
+        "അഡ്മിഷനും കൂടുതൽ വിവരങ്ങൾക്കും ഞങ്ങളെ സമീപിക്കൂ";
+
+        phoneTitle.innerHTML = "ഫോൺ";
+        whatsappTitle.innerHTML = "വാട്ട്സ്ആപ്പ്";
+
+        whatsappText.innerHTML =
+        "വാട്ട്സ്ആപ്പിൽ നേരിട്ട് സന്ദേശമയക്കൂ";
+
+        whatsappBtn.innerHTML = "സന്ദേശമയക്കൂ";
+
+        footerAbout.innerHTML =
+        "ആധുനിക വിദ്യാഭ്യാസവും ഇസ്ലാമിക മൂല്യങ്ങളും ഒരുമിപ്പിക്കുന്ന പ്രൊഫഷണൽ ഓൺലൈൻ പഠന സംവിധാനം.";
+
+        quickLinks.innerHTML = "വേഗ ലിങ്കുകൾ";
+        footerContact.innerHTML = "ബന്ധപ്പെടുക";
+
+        fHome.innerHTML = "ഹോം";
+        fAbout.innerHTML = "ഞങ്ങളേക്കുറിച്ച്";
+        fServices.innerHTML = "സേവനങ്ങൾ";
+        fSubjects.innerHTML = "വിഷയങ്ങൾ";
+
+      }
+
+      else{
+
+        location.reload();
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
